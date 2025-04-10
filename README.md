@@ -77,9 +77,14 @@
 
     header img {
       width: 100%;
-      max-width: 600px;
+      max-width: 400px;
       height: auto;
       box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    header img:hover {
+      transform: scale(1.03);
     }
 
     .info {
@@ -137,7 +142,14 @@
     .credits-container .left, .credits-container .right {
       flex: 1 1 100%;
       padding: 10px;
-      text-align: center;
+    }
+
+    .credits-container .left {
+      text-align: left;
+    }
+
+    .credits-container .right {
+      text-align: right;
     }
 
     .footer {
@@ -147,10 +159,32 @@
       padding-bottom: 40px;
     }
 
+    .footer a {
+      position: relative;
+      text-decoration: none;
+    }
+
+    .footer a::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: white;
+      transform-origin: bottom right;
+      transition: transform 0.3s ease-out;
+    }
+
+    .footer a:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+
     @media (min-width: 768px) {
       .credits-container .left, .credits-container .right {
         flex: 1;
-        text-align: left;
       }
     }
 
@@ -219,8 +253,6 @@
       </div>
       <div class="description">
         <p><strong>En-Us:</strong> Welcome! I'm learning English, and to help with that, I’m launching my first book entirely in English. It’s part of my journey to improve my writing and language skills. Even though this started as a study project, I’m putting my heart into it so it becomes something that anyone can enjoy and connect with. I hope it turns into a book people truly love. Thank you so much to everyone supporting this project!</p>
-        <br>
-        <p><strong>Pt-Br:</strong> Bem-vindos! Estou aprendendo inglês e, para isso, estou lançando meu primeiro livro inteiramente no idioma. É parte da minha jornada para melhorar minha escrita e compreensão. Mesmo sendo um projeto de estudo, estou colocando todo o meu coração nele, para que se torne algo que qualquer pessoa possa gostar e se identificar. Espero que se torne um livro que as pessoas realmente amem. Muito obrigado a todos que estão apoiando esse projeto!</p>
       </div>
       <div class="synopsis">
         <p><strong>Synopsis:</strong> Vincent has recently been going through internal conflicts. Is he capable of loving or being loved? Is he ready for this feeling? After being rejected by people he trusted, Vincent begins to question what love is and if he has ever truly felt it. This is a story about love, self-discovery, perseverance and redemption.</p>
@@ -239,7 +271,7 @@
         </div>
         <div class="right">
           <strong>Editora/Publisher:</strong>
-          <p style="text-align:center">Nenhuma</p>
+          <p>Nenhuma</p>
         </div>
       </div>
     </div>
