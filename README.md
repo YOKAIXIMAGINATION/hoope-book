@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -105,7 +106,7 @@
     }
 
     .fixed-quote {
-      position: absolute;
+      position: fixed;
       top: 55%;
       left: 30px;
       transform: translateY(-50%);
@@ -156,8 +157,11 @@
     @media (max-width: 768px) {
       .fixed-quote {
         position: static;
+        transform: none;
         margin: 20px auto;
         text-align: center;
+        animation: none;
+        opacity: 1;
       }
 
       .countdown {
